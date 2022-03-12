@@ -86,16 +86,5 @@ class ViewController: UIViewController {
             return "Você está com obesidade GRAU 3"
         }
     }
-    
-    //Mandar mensagem no slack
-    //Nomear time
-    //Nomes dos integrantes
-    //Github do projeto
-    
-    //izabela mateus
-    //pamela lima
-    //vitor hugo
-    //luiz kokumai
-    //william daniel
 }
 
