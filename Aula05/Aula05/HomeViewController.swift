@@ -9,15 +9,25 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    // MARK: Properties IBOutlet
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var autenticatorButton: UIButton!
     
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        delegates()
     }
 
+    // MARK: Private Methods
+    private func delegates() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+
+    // MARK: IBAction Methods
     @IBAction func authenticate(_ sender: UIButton) {
         
         if let email = emailTextField.text,
@@ -30,6 +40,7 @@ class HomeViewController: UIViewController {
         showAlert("Email e/ou Senha inválidos.")
     }
     
+    // MARK: Public Methods
     func showAlert(_ message: String) {
         
         let alert = UIAlertController(title: "Login", message: message, preferredStyle: .alert)
@@ -50,3 +61,15 @@ class HomeViewController: UIViewController {
     }
 }
 
+extension HomeViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+}
