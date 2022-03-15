@@ -10,12 +10,12 @@ import Foundation
 struct Car {
     var model: String
     var image: String
-    var specifications: (String, [CarSpecification])
+    var specifications: [CarSpecification]
     
     init(model: String, image: String) {
         self.model = model
         self.image = image
-        specifications = ("Key Specifications", [
+        specifications = [
             CarSpecification(spec: "WLTP Mileage", desc: "7.46 kmpl"),
             CarSpecification(spec: "Engine Displacement (cc)", desc: "3998"),
             CarSpecification(spec: "Max Power (bhp@rpm)", desc: "502.88Bhp@6000rpm"),
@@ -26,7 +26,7 @@ struct Car {
             CarSpecification(spec: "Max Torque (nm@rpm)", desc: "675Nm@2000-5000rpm"),
             CarSpecification(spec: "Transmission type", desc: "Manual"),
             CarSpecification(spec: "Body type", desc: "Convertible")
-        ])
+        ]
     }
 }
 

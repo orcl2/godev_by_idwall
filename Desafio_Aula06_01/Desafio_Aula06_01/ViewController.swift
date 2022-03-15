@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var carImageView: UIImageView!
+    
+    var timer: Timer!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,17 +92,17 @@ extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         Datasource.currentCar = Datasource.cars[indexPath.row]
-        
+        Datasource.currentCar.specifications.shuffle()
         let car = Datasource.currentCar
-        
+    
+        tableView.reloadData()
         updateUI(car: car)
     }
 }
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(Datasource.currentCar.specifications.1.count)
-        return Datasource.currentCar.specifications.1.count
+        return Datasource.currentCar.specifications.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -110,7 +112,7 @@ extension ViewController: UITableViewDataSource {
         }
         
         let car = Datasource.currentCar
-        let specification = car.specifications.1[indexPath.row]
+        let specification = car.specifications[indexPath.row]
         
         cell.keyLabel.text = specification.spec
         cell.valueLabel.text = specification.desc
@@ -120,5 +122,5 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
-    
+        
 }
