@@ -11,9 +11,23 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        title = "Home"
     }
 
-
+    @IBAction func goToNextView(_ sender: UIButton) {
+        
+        let sender = Data(name: "William Daniel", age: 29)
+        performSegue(withIdentifier: "goToSecondViewController", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToSecondViewController" {
+            
+            guard let secondViewController = segue.destination as? SecondViewController else { return }
+            
+            secondViewController.property = sender as? Data
+        }
+    }
 }
 
