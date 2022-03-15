@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var carImageView: UIImageView!
         
     override func viewDidLoad() {
@@ -59,6 +60,7 @@ class ViewController: UIViewController {
     }
     
     private func updateUI(car: Car) {
+        modelLabel.text = Datasource.currentCar.model
         carImageView.image = UIImage(named: car.image) ?? UIImage(systemName: "questionmark")
     }
 }
@@ -114,10 +116,6 @@ extension ViewController: UITableViewDataSource {
         cell.valueLabel.text = specification.desc
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return Datasource.currentCar.model
     }
 }
 

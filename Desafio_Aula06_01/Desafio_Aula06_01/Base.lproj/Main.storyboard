@@ -52,34 +52,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3zl-EB-PJD">
-                                <rect key="frame" x="5" y="542" width="404" height="320"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3zl-EB-PJD">
+                                <rect key="frame" x="20" y="533.5" width="374" height="343.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpecificationTableViewCell" id="X3O-y1-Ywx" customClass="SpecificationTableViewCell" customModule="Desafio_Aula06_01" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="404" height="21"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpecificationTableViewCell" rowHeight="50" id="X3O-y1-Ywx" customClass="SpecificationTableViewCell" customModule="Desafio_Aula06_01" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X3O-y1-Ywx" id="ync-Oo-gCt">
-                                            <rect key="frame" x="0.0" y="0.0" width="404" height="21"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UxU-HP-Gmb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="404" height="21"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UxU-HP-Gmb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keyLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPg-Zu-nDU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="202" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="179" height="50"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="valueLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vtp-c1-Mb4">
-                                                            <rect key="frame" x="202" y="0.0" width="202" height="21"/>
+                                                            <rect key="frame" x="195" y="0.0" width="179" height="50"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="K2f-qm-6mU"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -104,17 +106,22 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MXj-sI-1ia" secondAttribute="trailing" constant="5" id="JRB-AW-Ley"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I3P-MG-evN" secondAttribute="trailing" constant="5" id="b7s-21-eoh"/>
                             <constraint firstItem="MXj-sI-1ia" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="b84-mt-0Ki"/>
+                            <constraint firstItem="3zl-EB-PJD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c9S-l2-8t9"/>
+                            <constraint firstItem="3zl-EB-PJD" firstAttribute="top" secondItem="z7R-pw-kDP" secondAttribute="bottom" id="gra-xq-Dfm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z7R-pw-kDP" secondAttribute="trailing" constant="5" id="kF2-IJ-Kus"/>
+                            <constraint firstItem="3zl-EB-PJD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="15" id="klt-sM-RVA"/>
                             <constraint firstItem="MXj-sI-1ia" firstAttribute="top" secondItem="I3P-MG-evN" secondAttribute="bottom" constant="5" id="lfD-Zp-r0u"/>
                             <constraint firstItem="I3P-MG-evN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="oQq-3g-PeZ"/>
                             <constraint firstItem="z7R-pw-kDP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="vDs-yq-RxT"/>
                             <constraint firstItem="I3P-MG-evN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="vsk-9q-buy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3zl-EB-PJD" secondAttribute="trailing" constant="20" id="yU9-5o-uaj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BTC-Go-BV6"/>
                     <connections>
                         <outlet property="carImageView" destination="MXj-sI-1ia" id="1db-1S-aC3"/>
                         <outlet property="collectionView" destination="I3P-MG-evN" id="SJP-Q3-BFP"/>
+                        <outlet property="modelLabel" destination="z7R-pw-kDP" id="VUu-pb-XLS"/>
                         <outlet property="tableView" destination="3zl-EB-PJD" id="Klz-3F-y3M"/>
                     </connections>
                 </viewController>
