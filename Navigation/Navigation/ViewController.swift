@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBAction func goToNextView(_ sender: UIButton) {
         
         let sender = Data(name: "William Daniel", age: 29)
-        performSegue(withIdentifier: "goToSecondViewController", sender: sender)
+        performSegue(withIdentifier: "goToSecondViewController", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
