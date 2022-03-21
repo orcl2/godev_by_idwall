@@ -21,11 +21,16 @@ class FounderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configUI()
         register()
         delegates()
         loadData()
     }
 
+    private func configUI() {
+        title = "Founders"
+    }
+    
     private func delegates() {
         tableView.delegate = self
         tableView.dataSource = self
