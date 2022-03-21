@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FounderViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -37,20 +37,16 @@ class ViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: CustomTableViewCell.identifier)
     }
     
-    private func layout() {
-
-    }
-    
     private func loadData() {
         founderApi.performRequest()
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension FounderViewController: UITableViewDelegate {
     
 }
 
-extension ViewController: UITableViewDataSource {
+extension FounderViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return founders.count
     }
@@ -73,7 +69,7 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: FounderDelegate {
+extension FounderViewController: FounderDelegate {
     func updateDatasource(with founders: [Founder]) {
         self.founders = founders
     }

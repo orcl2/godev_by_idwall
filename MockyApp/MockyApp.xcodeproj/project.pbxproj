@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		264CC91B27E92961002EFE7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264CC91A27E92961002EFE7D /* AppDelegate.swift */; };
 		264CC91D27E92961002EFE7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264CC91C27E92961002EFE7D /* SceneDelegate.swift */; };
-		264CC91F27E92961002EFE7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264CC91E27E92961002EFE7D /* ViewController.swift */; };
-		264CC92227E92961002EFE7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264CC92027E92961002EFE7D /* Main.storyboard */; };
+		264CC91F27E92961002EFE7D /* FounderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264CC91E27E92961002EFE7D /* FounderViewController.swift */; };
+		264CC92227E92961002EFE7D /* Founder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264CC92027E92961002EFE7D /* Founder.storyboard */; };
 		264CC92527E92961002EFE7D /* MockyApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 264CC92327E92961002EFE7D /* MockyApp.xcdatamodeld */; };
 		264CC92727E92962002EFE7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264CC92627E92962002EFE7D /* Assets.xcassets */; };
 		264CC92A27E92962002EFE7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264CC92827E92962002EFE7D /* LaunchScreen.storyboard */; };
@@ -25,8 +25,8 @@
 		264CC91727E92961002EFE7D /* MockyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		264CC91A27E92961002EFE7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		264CC91C27E92961002EFE7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		264CC91E27E92961002EFE7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		264CC92127E92961002EFE7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		264CC91E27E92961002EFE7D /* FounderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FounderViewController.swift; sourceTree = "<group>"; };
+		264CC92127E92961002EFE7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Founder.storyboard; sourceTree = "<group>"; };
 		264CC92427E92961002EFE7D /* MockyApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MockyApp.xcdatamodel; sourceTree = "<group>"; };
 		264CC92627E92962002EFE7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		264CC92927E92962002EFE7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,18 +68,11 @@
 		264CC91927E92961002EFE7D /* MockyApp */ = {
 			isa = PBXGroup;
 			children = (
-				264CC91A27E92961002EFE7D /* AppDelegate.swift */,
-				264CC91C27E92961002EFE7D /* SceneDelegate.swift */,
-				264CC91E27E92961002EFE7D /* ViewController.swift */,
-				264CC92027E92961002EFE7D /* Main.storyboard */,
-				264CC92627E92962002EFE7D /* Assets.xcassets */,
-				264CC92827E92962002EFE7D /* LaunchScreen.storyboard */,
-				264CC92B27E92962002EFE7D /* Info.plist */,
+				264CC94427E93884002EFE7D /* Resources */,
+				264CC94327E93875002EFE7D /* Application */,
+				264CC94127E937DE002EFE7D /* Extensions */,
+				264CC93C27E93797002EFE7D /* Scenes */,
 				264CC92327E92961002EFE7D /* MockyApp.xcdatamodeld */,
-				264CC93527E929EE002EFE7D /* Custom */,
-				264CC93627E92B0D002EFE7D /* FounderModel.swift */,
-				264CC93827E92B3A002EFE7D /* FounderApiService.swift */,
-				264CC93A27E931AF002EFE7D /* UIImageView+extension.swift */,
 			);
 			path = MockyApp;
 			sourceTree = "<group>";
@@ -91,6 +84,101 @@
 				264CC93227E929E5002EFE7D /* CustomTableViewCell.xib */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		264CC93C27E93797002EFE7D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				264CC94527E93898002EFE7D /* LaunchScreen */,
+				264CC93527E929EE002EFE7D /* Custom */,
+				264CC93D27E937AD002EFE7D /* Founder */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		264CC93D27E937AD002EFE7D /* Founder */ = {
+			isa = PBXGroup;
+			children = (
+				264CC94227E937F2002EFE7D /* Controller */,
+				264CC94027E937CD002EFE7D /* Service */,
+				264CC93F27E937BD002EFE7D /* View */,
+				264CC93E27E937B8002EFE7D /* Model */,
+			);
+			path = Founder;
+			sourceTree = "<group>";
+		};
+		264CC93E27E937B8002EFE7D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				264CC93627E92B0D002EFE7D /* FounderModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		264CC93F27E937BD002EFE7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				264CC92027E92961002EFE7D /* Founder.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		264CC94027E937CD002EFE7D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				264CC93827E92B3A002EFE7D /* FounderApiService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		264CC94127E937DE002EFE7D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				264CC93A27E931AF002EFE7D /* UIImageView+extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		264CC94227E937F2002EFE7D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				264CC91E27E92961002EFE7D /* FounderViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		264CC94327E93875002EFE7D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				264CC91A27E92961002EFE7D /* AppDelegate.swift */,
+				264CC91C27E92961002EFE7D /* SceneDelegate.swift */,
+				264CC92B27E92962002EFE7D /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		264CC94427E93884002EFE7D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				264CC92627E92962002EFE7D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		264CC94527E93898002EFE7D /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				264CC94627E938A2002EFE7D /* View */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		264CC94627E938A2002EFE7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				264CC92827E92962002EFE7D /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +242,7 @@
 				264CC92A27E92962002EFE7D /* LaunchScreen.storyboard in Resources */,
 				264CC92727E92962002EFE7D /* Assets.xcassets in Resources */,
 				264CC93427E929E5002EFE7D /* CustomTableViewCell.xib in Resources */,
-				264CC92227E92961002EFE7D /* Main.storyboard in Resources */,
+				264CC92227E92961002EFE7D /* Founder.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				264CC91F27E92961002EFE7D /* ViewController.swift in Sources */,
+				264CC91F27E92961002EFE7D /* FounderViewController.swift in Sources */,
 				264CC93327E929E5002EFE7D /* CustomTableViewCell.swift in Sources */,
 				264CC92527E92961002EFE7D /* MockyApp.xcdatamodeld in Sources */,
 				264CC93B27E931AF002EFE7D /* UIImageView+extension.swift in Sources */,
@@ -179,12 +267,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		264CC92027E92961002EFE7D /* Main.storyboard */ = {
+		264CC92027E92961002EFE7D /* Founder.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				264CC92127E92961002EFE7D /* Base */,
 			);
-			name = Main.storyboard;
+			name = Founder.storyboard;
 			sourceTree = "<group>";
 		};
 		264CC92827E92962002EFE7D /* LaunchScreen.storyboard */ = {
@@ -249,6 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -304,6 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
