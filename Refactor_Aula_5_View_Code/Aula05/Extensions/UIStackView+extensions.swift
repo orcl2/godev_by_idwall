@@ -17,13 +17,9 @@ extension UIStackView {
     }
     
     func configArrangedSubview(_ view: UIView, with constraints: [NSLayoutConstraint]) {
-        
         addArrangedSubview(view)
             
-        constraints.forEach { constraint in
-            constraint.isActive = true
-        }
-        
+        constraints.forEach { constraint in constraint.isActive = true }
     }
     
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginGroupView: UIStackView {
+class LoginInputGroupView: UIStackView {
 
     var groupType: LoginGroupType!
     

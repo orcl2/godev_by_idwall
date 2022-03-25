@@ -10,13 +10,8 @@ import UIKit
 class HomeViewController: UIViewController {
 
     // MARK: View Components
-    lazy var contentStackView: UIStackView = {
-        let stack = UIStackView()
-        
-        stack.spacing = 10
-        stack.axis = .vertical
-        stack.contentMode = .top
-        stack.translatesAutoresizingMaskIntoConstraints = false
+    lazy var mainStackView: LoginMainContainer = {
+        let stack = LoginMainContainer(frame: .zero)
         
         return stack
     }()
@@ -26,25 +21,26 @@ class HomeViewController: UIViewController {
         
         return image
     }()
+    
+    lazy var emailGroupView: LoginInputGroupView! = {
+        let groupView = LoginInputGroupView(frame: .zero, ofType: .email)
+                
+        return groupView
+    }()
+    
+    lazy var passwordGroupView: LoginInputGroupView! = {
+        let groupView = LoginInputGroupView(frame: .zero, ofType: .password)
+                
+        return groupView
+    }()
 
+    // MARK: TODO -> create button component
     lazy private var autenticatorButton: UIButton! = {
         let button = UIButton()
         
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
-    }()
-    
-    lazy var emailGroupView: LoginGroupView! = {
-        let groupView = LoginGroupView(frame: .zero, ofType: .email)
-                
-        return groupView
-    }()
-    
-    lazy var passwordGroupView: LoginGroupView! = {
-        let groupView = LoginGroupView(frame: .zero, ofType: .password)
-                
-        return groupView
     }()
     
     // MARK: Life Cycle
@@ -59,30 +55,20 @@ class HomeViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .systemBackground
         
-        view.addSubviews([contentStackView])
+        view.configSubview(mainStackView, with: [
+            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
+            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
+            mainStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -75)
+        ])
         
-        configContentStackView()
+        mainStackView.configArrangedSubview(loginImageView, with: [
+            loginImageView.heightAnchor.constraint(equalToConstant: LoginSizeDefaults.image.heigth)
+        ])
+        mainStackView.configArrangedSubview(emailGroupView, with: [])
+        mainStackView.configArrangedSubview(passwordGroupView, with: [])
     }
     
     // MARK: Private methods
-    private func configContentStackView() {
-        NSLayoutConstraint.activate([
-            contentStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
-            contentStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
-            contentStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-        
-
-        contentStackView.configArrangedSubview(loginImageView, with: [
-            loginImageView.heightAnchor.constraint(equalToConstant: LoginSizeDefaults.image.heigth)
-        ])
-        
-        contentStackView.addArrangedSubviews([
-            emailGroupView,
-            passwordGroupView
-        ])
-    }
-    
     private func delegates() {
         emailGroupView.textField.delegate = self
         passwordGroupView.textField.delegate = self
