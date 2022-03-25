@@ -73,9 +73,8 @@ class HomeViewController: UIViewController {
         ])
         mainStackView.configArrangedSubview(emailGroupView, with: [])
         mainStackView.configArrangedSubview(passwordGroupView, with: [])
-        mainStackView.configArrangedSubview(authenticationButton, with: [
-            authenticationButton.heightAnchor.constraint(equalToConstant: LoginSizeDefaults.button.heigth)
-        ])
+        
+        configAuthenticationButton()
     }
     
     // MARK: Private methods
@@ -92,6 +91,14 @@ class HomeViewController: UIViewController {
             backgroungImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
         ])
+    }
+    
+    private func configAuthenticationButton() {
+        mainStackView.configArrangedSubview(authenticationButton, with: [
+            authenticationButton.heightAnchor.constraint(equalToConstant: LoginSizeDefaults.button.heigth)
+        ])
+        
+        authenticationButton.addTarget(self, action: #selector(authenticate), for: .touchUpInside)
     }
     
     // MARK: Public Methods
@@ -115,7 +122,7 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: Action Methods
-    @objc func authenticate(_ sender: UIButton) {
+    @objc func authenticate() {
         
         if let email = emailGroupView.textField.text,
            let password = passwordGroupView.textField.text
