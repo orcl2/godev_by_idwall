@@ -22,7 +22,6 @@ class LoginTextField: UITextField, LoginComponentProtocol {
     internal func setupView(with type: LoginGroupType) {
         
         self.keyboardType = type.keyboardType
-        
         borderStyle = .roundedRect
         font = UIFont.systemFont(ofSize: 22)
         translatesAutoresizingMaskIntoConstraints = false

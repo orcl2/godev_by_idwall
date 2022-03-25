@@ -18,7 +18,7 @@ class LoginLabel: UILabel, LoginComponentProtocol {
     internal func setupView(with type: LoginGroupType) {
         text = type.labelText
         font = UIFont.systemFont(ofSize: 20)
-        textColor = .label
+        textColor = .systemRed
         textAlignment = .left
         translatesAutoresizingMaskIntoConstraints = false
     }

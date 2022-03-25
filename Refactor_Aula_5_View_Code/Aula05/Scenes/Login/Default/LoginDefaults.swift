@@ -10,6 +10,7 @@ enum LoginSizeDefaults{
     case label
     case textField
     case image
+    case button
         
     var heigth: CGFloat {
         get {
@@ -22,9 +23,11 @@ enum LoginSizeDefaults{
         case .label:
             return 40
         case .textField:
-            return 55
+            return 45
         case .image:
-            return 120
+            return 75
+        case .button:
+            return 50
         }
     }
 }

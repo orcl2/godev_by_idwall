@@ -33,12 +33,16 @@ class HomeViewController: UIViewController {
                 
         return groupView
     }()
+    
+    lazy var backgroungImageView: LoginBackgroundImageView! = {
+        let backgroungImageView = LoginBackgroundImageView(frame: .zero)
+        
+        return backgroungImageView
+    }()
 
     // MARK: TODO -> create button component
-    lazy private var autenticatorButton: UIButton! = {
-        let button = UIButton()
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
+    lazy private var authenticationButton: LoginButton! = {
+        let button = LoginButton(frame: .zero)
         
         return button
     }()
@@ -54,11 +58,14 @@ class HomeViewController: UIViewController {
     // MARK: Private Methods
     private func setupUI() {
         view.backgroundColor = .systemBackground
+        view.addSubview(backgroungImageView)
+        
+        configBackground()
         
         view.configSubview(mainStackView, with: [
             mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
             mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
-            mainStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -75)
+            mainStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0)
         ])
         
         mainStackView.configArrangedSubview(loginImageView, with: [
@@ -66,12 +73,25 @@ class HomeViewController: UIViewController {
         ])
         mainStackView.configArrangedSubview(emailGroupView, with: [])
         mainStackView.configArrangedSubview(passwordGroupView, with: [])
+        mainStackView.configArrangedSubview(authenticationButton, with: [
+            authenticationButton.heightAnchor.constraint(equalToConstant: LoginSizeDefaults.button.heigth)
+        ])
     }
     
     // MARK: Private methods
     private func delegates() {
         emailGroupView.textField.delegate = self
         passwordGroupView.textField.delegate = self
+    }
+    
+    private func configBackground() {
+        NSLayoutConstraint.activate([
+            backgroungImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroungImageView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            backgroungImageView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            backgroungImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
+        ])
     }
     
     // MARK: Public Methods

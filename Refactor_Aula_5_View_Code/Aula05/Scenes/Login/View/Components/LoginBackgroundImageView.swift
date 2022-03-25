@@ -1,5 +1,5 @@
 //
-//  LoginMainGroup.swift
+//  LoginBackgroundImageView.swift
 //  Aula05
 //
 //  Created by Idwall Go Dev 003 on 25/03/22.
@@ -7,17 +7,22 @@
 
 import UIKit
 
-class LoginMainContainer: UIStackView {
+class LoginBackgroundImageView: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        spacing = 15
-        axis = .vertical
-        contentMode = .top
+        
+        setupView()
+    }
+    
+    func setupView() {
+        image = UIImage(named: "bg")
+        contentMode = .scaleAspectFill
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    required init(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }

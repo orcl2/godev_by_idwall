@@ -12,6 +12,8 @@
 		2631687B27DBFBCA0046A2F0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2631687A27DBFBCA0046A2F0 /* LoginViewController.swift */; };
 		2631688027DBFBCB0046A2F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2631687F27DBFBCB0046A2F0 /* Assets.xcassets */; };
 		2631688327DBFBCB0046A2F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2631688127DBFBCB0046A2F0 /* LaunchScreen.storyboard */; };
+		26384BC827EE1E6C0007D681 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26384BC727EE1E6C0007D681 /* LoginButton.swift */; };
+		26384BCC27EE25A70007D681 /* LoginBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26384BCB27EE25A70007D681 /* LoginBackgroundImageView.swift */; };
 		265D4A1927ED2746004C2486 /* UIVIew+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D4A1827ED2746004C2486 /* UIVIew+extensions.swift */; };
 		265D4A3C27ED396D004C2486 /* LoginInputGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D4A3B27ED396D004C2486 /* LoginInputGroupView.swift */; };
 		265D4A4227ED4698004C2486 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D4A4127ED4698004C2486 /* LoginTextField.swift */; };
@@ -32,6 +34,8 @@
 		2631687F27DBFBCB0046A2F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2631688227DBFBCB0046A2F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2631688427DBFBCB0046A2F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26384BC727EE1E6C0007D681 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		26384BCB27EE25A70007D681 /* LoginBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBackgroundImageView.swift; sourceTree = "<group>"; };
 		265D4A1827ED2746004C2486 /* UIVIew+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+extensions.swift"; sourceTree = "<group>"; };
 		265D4A3B27ED396D004C2486 /* LoginInputGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputGroupView.swift; sourceTree = "<group>"; };
 		265D4A4127ED4698004C2486 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 				265D4A4727ED4EF0004C2486 /* LoginLabel.swift */,
 				265D4A5827ED6955004C2486 /* LoginImageView.swift */,
 				265D4A5A27ED7069004C2486 /* LoginMainContainer.swift */,
+				26384BC727EE1E6C0007D681 /* LoginButton.swift */,
+				26384BCB27EE25A70007D681 /* LoginBackgroundImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -244,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26384BCC27EE25A70007D681 /* LoginBackgroundImageView.swift in Sources */,
 				2631687B27DBFBCA0046A2F0 /* LoginViewController.swift in Sources */,
 				2631687727DBFBCA0046A2F0 /* AppDelegate.swift in Sources */,
 				265D4A4D27ED64E7004C2486 /* LoginComponentProtocol.swift in Sources */,
@@ -253,6 +260,7 @@
 				265D4A5B27ED7069004C2486 /* LoginMainContainer.swift in Sources */,
 				265D4A4F27ED652E004C2486 /* LoginDefaults.swift in Sources */,
 				265D4A4827ED4EF0004C2486 /* LoginLabel.swift in Sources */,
+				26384BC827EE1E6C0007D681 /* LoginButton.swift in Sources */,
 				265D4A1927ED2746004C2486 /* UIVIew+extensions.swift in Sources */,
 				2631687927DBFBCA0046A2F0 /* SceneDelegate.swift in Sources */,
 				265D4A5927ED6955004C2486 /* LoginImageView.swift in Sources */,

@@ -35,7 +35,6 @@ class LoginInputGroupView: UIStackView {
     }
     
     private func setupUI() {
-        spacing = 5
         axis = .vertical
         translatesAutoresizingMaskIntoConstraints = false
    

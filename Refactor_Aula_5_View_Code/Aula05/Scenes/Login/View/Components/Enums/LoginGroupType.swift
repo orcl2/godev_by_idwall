@@ -24,6 +24,12 @@ enum LoginGroupType {
         }
     }
     
+    var placeHolder: String {
+        get {
+            return getPlacheHolder()
+        }
+    }
+    
     func textFieldKeyboardType() -> UIKeyboardType {
         switch self {
         case .email:
@@ -36,9 +42,18 @@ enum LoginGroupType {
     func fieldLabel() -> String {
         switch self {
         case .email:
-            return "Email"
+            return "Informe seu Email"
         case .password:
-            return "Password"
+            return "Informe sua Password"
+        }
+    }
+    
+    func getPlacheHolder() -> String {
+        switch self {
+        case .email:
+            return "...email"
+        case .password:
+            return "...password"
         }
     }
 }
