@@ -15,7 +15,7 @@ class LoginLabel: UILabel, LoginComponentProtocol {
         setupView(with: groupType)
     }
     
-    private func setupView(with type: LoginGroupType) {
+    internal func setupView(with type: LoginGroupType) {
         text = type.labelText
         font = UIFont.systemFont(ofSize: 20)
         textColor = .label

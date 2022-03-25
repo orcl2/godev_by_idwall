@@ -19,7 +19,7 @@ class LoginTextField: UITextField, LoginComponentProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupView(with type: LoginGroupType) {
+    internal func setupView(with type: LoginGroupType) {
         
         self.keyboardType = type.keyboardType
         

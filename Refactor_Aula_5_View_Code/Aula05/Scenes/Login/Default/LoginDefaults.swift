@@ -6,10 +6,11 @@
 //
 import UIKit
 
-enum LoginDefaults: CGFloat {
+enum LoginSizeDefaults{
     case label
     case textField
-    
+    case image
+        
     var heigth: CGFloat {
         get {
             return getHeigth()
@@ -22,6 +23,25 @@ enum LoginDefaults: CGFloat {
             return 40
         case .textField:
             return 55
+        case .image:
+            return 120
+        }
+    }
+}
+
+enum LoginImageDefaults {
+    case logo
+    
+    var image: UIImage? {
+        get {
+            return getImage()
+        }
+    }
+    
+    func getImage() -> UIImage? {
+        switch self {
+        case .logo:
+            return UIImage(systemName: "swift")
         }
     }
 }

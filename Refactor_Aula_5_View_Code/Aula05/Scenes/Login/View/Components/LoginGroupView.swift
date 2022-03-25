@@ -38,13 +38,13 @@ class LoginGroupView: UIStackView {
         spacing = 5
         axis = .vertical
         translatesAutoresizingMaskIntoConstraints = false
-        
+   
         configArrangedSubview(label, with: [
-            label.heightAnchor.constraint(equalToConstant: LoginDefaults.label.heigth)
+            label.heightAnchor.constraint(equalToConstant: LoginSizeDefaults.label.heigth)
         ])
         
         configArrangedSubview(textField, with: [
-            textField.heightAnchor.constraint(equalToConstant: LoginDefaults.textField.heigth),
+            textField.heightAnchor.constraint(equalToConstant: LoginSizeDefaults.textField.heigth),
             textField.widthAnchor.constraint(equalTo: self.widthAnchor)
         ])
     }

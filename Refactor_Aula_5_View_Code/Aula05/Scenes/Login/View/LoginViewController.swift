@@ -17,91 +17,19 @@ class HomeViewController: UIViewController {
         stack.axis = .vertical
         stack.contentMode = .top
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.backgroundColor = .yellow
         
         return stack
     }()
-//
-//    lazy var emailStackView: UIStackView = {
-//        let stack = UIStackView()
-//
-//        stack.spacing = 10
-//        stack.axis = .vertical
-//        stack.translatesAutoresizingMaskIntoConstraints = false
-//        stack.backgroundColor = .red
-//        return stack
-//    }()
-//
-//    lazy var emailLabel: UILabel = {
-//        let label = UILabel()
-//
-//        label.text = "Email"
-//        label.font = UIFont.systemFont(ofSize: 20)
-//        label.textColor = .label
-//        label.textAlignment = .left
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//
-//        return label
-//    }()
-//
-//    lazy private var emailTextField: UITextField! = {
-//        let textField = UITextField()
-//
-//        //TODO
-//        textField.keyboardType = .emailAddress
-//        textField.borderStyle = .roundedRect
-//        textField.translatesAutoresizingMaskIntoConstraints = false
-//
-//        return textField
-//    }()
-    
-//    lazy var passwordStackView: UIStackView = {
-//        let stack = UIStackView()
-//
-//        stack.spacing = 10
-//        stack.axis = .vertical
-//        stack.translatesAutoresizingMaskIntoConstraints = false
-//        stack.backgroundColor = .red
-//        return stack
-//    }()
-    
-    lazy var iconImageView: UIImageView = {
-        let image = UIImageView()
-        
-        image.image = UIImage(systemName: "swift")
-        image.tintColor = .red
-        image.contentMode = .scaleAspectFit
-        image.translatesAutoresizingMaskIntoConstraints = false
+
+    lazy var loginImageView: LoginImageView! = {
+        let image = LoginImageView(frame: .zero)
         
         return image
     }()
-//
-//    lazy var passwordLabel: UILabel = {
-//        let label = UILabel()
-//
-//        label.text = "Password"
-//        label.font = UIFont.systemFont(ofSize: 20)
-//        label.textColor = .label
-//        label.textAlignment = .left
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//
-//        return label
-//    }()
-//
-//    lazy private var passwordTextField: UITextField! = {
-//        let textField = UITextField()
-//
-//        //TODO
-//        textField.keyboardType = .numberPad
-//        textField.translatesAutoresizingMaskIntoConstraints = false
-//
-//        return textField
-//    }()
-    
+
     lazy private var autenticatorButton: UIButton! = {
         let button = UIButton()
         
-        //TODO
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -109,17 +37,13 @@ class HomeViewController: UIViewController {
     
     lazy var emailGroupView: LoginGroupView! = {
         let groupView = LoginGroupView(frame: .zero, ofType: .email)
-        
-        groupView.translatesAutoresizingMaskIntoConstraints = false
-        
+                
         return groupView
     }()
     
     lazy var passwordGroupView: LoginGroupView! = {
         let groupView = LoginGroupView(frame: .zero, ofType: .password)
-        
-        groupView.translatesAutoresizingMaskIntoConstraints = false
-        
+                
         return groupView
     }()
     
@@ -143,60 +67,21 @@ class HomeViewController: UIViewController {
     // MARK: Private methods
     private func configContentStackView() {
         NSLayoutConstraint.activate([
-            contentStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            contentStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            contentStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
+            contentStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
             contentStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         
 
+        contentStackView.configArrangedSubview(loginImageView, with: [
+            loginImageView.heightAnchor.constraint(equalToConstant: LoginSizeDefaults.image.heigth)
+        ])
+        
         contentStackView.addArrangedSubviews([
-            iconImageView,
             emailGroupView,
             passwordGroupView
         ])
-       
-        configIconImageView()
-        //configEmailStackView()
-        //configEmailGroupView()
-        //configPasswordStackView()
     }
-    
-    private func configIconImageView() {
-        NSLayoutConstraint.activate([
-            iconImageView.widthAnchor.constraint(equalToConstant: 120),
-            iconImageView.heightAnchor.constraint(equalToConstant: 120)
-        ])
-    }
-    
-    private func configEmailGroupView() {
-     
-    }
-
-//    private func configEmailStackView() {
-//        emailStackView.addArrangedSubview(emailLabel)
-//        emailStackView.addArrangedSubview(emailTextField)
-//
-//        configEmailLabel()
-//        configEmailTextField()
-//    }
-
-//    private func configEmailLabel() {
-//        NSLayoutConstraint.activate([
-//            emailLabel.widthAnchor.constraint(equalTo: emailStackView.widthAnchor)
-//        ])
-//    }
-//
-//    private func configEmailTextField() {
-//        NSLayoutConstraint.activate([
-//            emailTextField.heightAnchor.constraint(equalToConstant: 55),
-//            emailTextField.widthAnchor.constraint(equalTo: emailStackView.widthAnchor)
-//        ])
-//    }
-//
-//    private func configPasswordStackView() {
-//        passwordStackView.addArrangedSubview(passwordTextField)
-//    }
-//
     
     private func delegates() {
         emailGroupView.textField.delegate = self

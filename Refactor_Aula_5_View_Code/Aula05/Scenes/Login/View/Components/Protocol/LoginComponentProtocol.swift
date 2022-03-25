@@ -9,4 +9,6 @@ import UIKit
 
 protocol LoginComponentProtocol {
     init(frame: CGRect, ofType groupType: LoginGroupType)
+    
+    func setupView(with type: LoginGroupType)
 }
