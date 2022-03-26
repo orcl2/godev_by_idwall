@@ -103,6 +103,7 @@ class ChatTableViewCell: UITableViewCell {
 
     // MARK: Public Methods
     func setupUI(friend: Friend) {
+        accessoryType = .disclosureIndicator
         configFriendImageView(with: friend.picture)
         configFriendContentStackView(with: friend)
     }
