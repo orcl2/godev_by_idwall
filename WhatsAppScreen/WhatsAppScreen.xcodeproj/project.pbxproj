@@ -19,6 +19,7 @@
 		2663B65227EE8EB500FECA78 /* ProfileDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2663B65127EE8EB500FECA78 /* ProfileDelegate.swift */; };
 		2663B65627EEA3AF00FECA78 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2663B65527EEA3AF00FECA78 /* EditViewController.swift */; };
 		2663B65827EEA76F00FECA78 /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2663B65727EEA76F00FECA78 /* DoneViewController.swift */; };
+		2663B65F27EED27C00FECA78 /* ChatHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2663B65E27EED27B00FECA78 /* ChatHeaderTableView.swift */; };
 		BC94F92D64A90F55A9911A8D /* Pods_WhatsAppScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E56ED267139298959C3BFC /* Pods_WhatsAppScreen.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		2663B65127EE8EB500FECA78 /* ProfileDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDelegate.swift; sourceTree = "<group>"; };
 		2663B65527EEA3AF00FECA78 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		2663B65727EEA76F00FECA78 /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
+		2663B65E27EED27B00FECA78 /* ChatHeaderTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatHeaderTableView.swift; sourceTree = "<group>"; };
 		7DEE1712E02D10253B3F26C8 /* Pods-WhatsAppScreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppScreen.release.xcconfig"; path = "Target Support Files/Pods-WhatsAppScreen/Pods-WhatsAppScreen.release.xcconfig"; sourceTree = "<group>"; };
 		B68495B66AFB36F31C8E0F58 /* Pods-WhatsAppScreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppScreen.debug.xcconfig"; path = "Target Support Files/Pods-WhatsAppScreen/Pods-WhatsAppScreen.debug.xcconfig"; sourceTree = "<group>"; };
 		B8E56ED267139298959C3BFC /* Pods_WhatsAppScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 		2663B64827EE840D00FECA78 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2663B65E27EED27B00FECA78 /* ChatHeaderTableView.swift */,
 				2663B64B27EE849500FECA78 /* ChatTableViewCell.swift */,
 			);
 			path = Components;
@@ -318,6 +321,7 @@
 				2663B64F27EE8CBF00FECA78 /* FetchProfileService.swift in Sources */,
 				2663B65227EE8EB500FECA78 /* ProfileDelegate.swift in Sources */,
 				2663B65827EEA76F00FECA78 /* DoneViewController.swift in Sources */,
+				2663B65F27EED27C00FECA78 /* ChatHeaderTableView.swift in Sources */,
 				2663B64C27EE849500FECA78 /* ChatTableViewCell.swift in Sources */,
 				2663B62D27EE7D0400FECA78 /* SceneDelegate.swift in Sources */,
 				2663B65627EEA3AF00FECA78 /* EditViewController.swift in Sources */,

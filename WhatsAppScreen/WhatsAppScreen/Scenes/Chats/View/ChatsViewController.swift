@@ -35,6 +35,7 @@ class ChatsViewController: UIViewController {
     lazy var appearence: UINavigationBarAppearance! = {
         var appearence = UINavigationBarAppearance()
         
+        appearence.shadowColor = .clear
         appearence.backgroundColor = .systemBackground
         appearence.titleTextAttributes = [.foregroundColor: UIColor.label]
         appearence.largeTitleTextAttributes = [.foregroundColor: UIColor.label]
@@ -78,6 +79,8 @@ class ChatsViewController: UIViewController {
     }
     
     private func registerCell() {
+        
+        tableView.register(ChatHeaderTableView.self, forHeaderFooterViewReuseIdentifier: ChatHeaderTableView.identifier)
         tableView.register(ChatTableViewCell.self, forCellReuseIdentifier: ChatTableViewCell.identifier)
     }
     
@@ -135,7 +138,15 @@ class ChatsViewController: UIViewController {
 
 // MARK: UITableViewDelegate
 extension ChatsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier:  ChatHeaderTableView.identifier) as? ChatHeaderTableView
+        
+        return header
+    }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
 }
 
 // MARK: UITableViewDataSource
