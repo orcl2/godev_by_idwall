@@ -7,8 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class HomeViewController: UIViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -31,9 +30,16 @@ class ViewController: UIViewController {
         appearence.titleTextAttributes = [.foregroundColor: UIColor.white]
         appearence.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
                 
+        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.standardAppearance = appearence
         navigationController?.navigationBar.compactAppearance = appearence
         navigationController?.navigationBar.scrollEdgeAppearance = appearence
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
+        
+        let addButton = UIBarButtonItem(image: UIImage.init(systemName: "house"), style: .plain, target: self, action: #selector(callSecondView))
+        
+        navigationItem.rightBarButtonItem = addButton
     }
     
     private func setupUI() {
@@ -60,13 +66,29 @@ class ViewController: UIViewController {
         
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
     }
-}
-
-extension ViewController: UITableViewDelegate {
     
+    @objc private func callSecondView() {
+        let secondVC = SecondViewController()
+        secondVC.idProduct = "92039203920"
+        present(secondVC, animated: true, completion: nil)
+        
+    }
 }
 
-extension ViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let thirdVC = ThirdViewController()
+        
+        if let _ = navigationController {
+            navigationController?.pushViewController(thirdVC, animated: true)
+        } else {
+            present(thirdVC, animated: true, completion: nil)
+        }
+    }
+}
+
+extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         4
     }
@@ -78,17 +100,5 @@ extension ViewController: UITableViewDataSource {
         }
                 
         return cell
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        return index
-    }
-    
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return ["Section", "Teste", "Arroba"]
     }
 }
